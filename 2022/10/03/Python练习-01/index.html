@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+   
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Python练习-01formatted string 格式化字符串123456first &#x3D; &amp;#x27;John&amp;#x27;last &#x3D; &amp;#x27;Smith&amp;#x27;msg &#x3D; f&amp;#x27;&amp;#123;first&amp;#125; [&amp;#123;last&amp;#125;] is a coder&amp;#x27;print(msg)John [Smith] is a coder  字符串函数123456">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高旭的网络日志">
+<meta property="og:url" content="http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/index.html">
+<meta property="og:site_name" content="高旭的网络日志">
+<meta property="og:description" content="Python练习-01formatted string 格式化字符串123456first &#x3D; &amp;#x27;John&amp;#x27;last &#x3D; &amp;#x27;Smith&amp;#x27;msg &#x3D; f&amp;#x27;&amp;#123;first&amp;#125; [&amp;#123;last&amp;#125;] is a coder&amp;#x27;print(msg)John [Smith] is a coder  字符串函数123456">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-10-03T14:56:33.849Z">
+<meta property="article:modified_time" content="2022-10-03T14:55:50.781Z">
+<meta property="article:author" content="高旭">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>高旭的网络日志</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/givemeapanda">项目</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/2022/10/01/Hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E5%9B%BE%E7%89%87%E8%A2%AB%E6%B5%8F%E8%A7%88%E5%99%A8%E5%B1%8F%E8%94%BD%E7%9A%84%E9%97%AE%E9%A2%98/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&text="><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&title="><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&is_video=false&description="><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=&body=Check out this article: http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&title="><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&title="><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&title="><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&title="><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&name=&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&t="><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python%E7%BB%83%E4%B9%A0-01"><span class="toc-number">1.</span> <span class="toc-text">Python练习-01</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#formatted-string-%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.1.</span> <span class="toc-text">formatted string 格式化字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text">字符串函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text">数学运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.4.</span> <span class="toc-text">运算优先级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#if%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.5.</span> <span class="toc-text">if语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97"><span class="toc-number">1.6.</span> <span class="toc-text">逻辑运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%B0%8F%E7%BB%83%E4%B9%A0%EF%BC%9A%E4%BD%93%E9%87%8D%E5%8D%95%E4%BD%8D%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.7.</span> <span class="toc-text">一个小练习：体重单位转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#while%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.8.</span> <span class="toc-text">while语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%B0%8F%E7%BB%83%E4%B9%A0%EF%BC%9A%E7%8C%9C%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F"><span class="toc-number">1.9.</span> <span class="toc-text">一个小练习：猜数字游戏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E6%B1%BD%E8%BD%A6%E5%90%AF%E5%81%9C%E6%B8%B8%E6%88%8F"><span class="toc-number">1.10.</span> <span class="toc-text">一个汽车启停游戏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.11.</span> <span class="toc-text">for循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%8D%B0%E5%87%BA%E4%B8%80%E4%B8%AAF"><span class="toc-number">1.12.</span> <span class="toc-text">打印出一个F</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%BE%E5%88%B0%E5%88%97%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC"><span class="toc-number">1.13.</span> <span class="toc-text">找到列表中的最大值</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">高旭</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-10-03T14:56:33.849Z" itemprop="datePublished">2022-10-03</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="Python练习-01"><a href="#Python练习-01" class="headerlink" title="Python练习-01"></a>Python练习-01</h1><h2 id="formatted-string-格式化字符串"><a href="#formatted-string-格式化字符串" class="headerlink" title="formatted string 格式化字符串"></a>formatted string 格式化字符串</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">first = <span class="string">&#x27;John&#x27;</span></span><br><span class="line">last = <span class="string">&#x27;Smith&#x27;</span></span><br><span class="line">msg = <span class="string">f&#x27;<span class="subst">&#123;first&#125;</span> [<span class="subst">&#123;last&#125;</span>] is a coder&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(msg)</span><br><span class="line"></span><br><span class="line">John [Smith] <span class="keyword">is</span> a coder</span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">course = <span class="string">&#x27;python for begnners&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(course))</span><br><span class="line"><span class="built_in">print</span>(course.upper())</span><br><span class="line"><span class="built_in">print</span>(course.lower())</span><br><span class="line"><span class="built_in">print</span>(course.find(<span class="string">&#x27;p&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(course.replace(<span class="string">&#x27;begnners&#x27;</span>, <span class="string">&#x27;absolute begnners&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;python&#x27;</span> <span class="keyword">in</span> course)</span><br><span class="line"><span class="built_in">print</span>(course.title())</span><br><span class="line"></span><br><span class="line"><span class="number">19</span></span><br><span class="line">PYTHON FOR BEGNNERS</span><br><span class="line">python <span class="keyword">for</span> begnners</span><br><span class="line"><span class="number">0</span></span><br><span class="line">python <span class="keyword">for</span> absolute begnners</span><br><span class="line"><span class="literal">True</span></span><br><span class="line">Python For Begnners</span><br></pre></td></tr></table></figure>
+
+<h2 id="数学运算"><a href="#数学运算" class="headerlink" title="数学运算"></a>数学运算</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">10</span> + <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="number">10</span> - <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="number">10</span> * <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="number">10</span> / <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="number">10</span> // <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="number">10</span> % <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="number">10</span> ** <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="number">13</span></span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">30</span></span><br><span class="line"><span class="number">3.3333333333333335</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1000</span></span><br><span class="line"></span><br><span class="line">x = <span class="number">10</span> </span><br><span class="line">x += <span class="number">3</span> <span class="comment">#相当于X+3</span></span><br><span class="line">x -= <span class="number">3</span> <span class="comment">#相当于X-3</span></span><br><span class="line">x *= <span class="number">3</span> <span class="comment">#相当于X*3</span></span><br><span class="line">x /= <span class="number">3</span> <span class="comment">#相当于X/3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="运算优先级"><a href="#运算优先级" class="headerlink" title="运算优先级"></a>运算优先级</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. exponentiation 2**3 幂</span><br><span class="line">2. multiplication or division 乘除</span><br><span class="line">3. addition or subtraction 加减</span><br></pre></td></tr></table></figure>
+
+<h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">is_hot = <span class="literal">True</span></span><br><span class="line">is_cold = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> is_hot:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;It&#x27;s a hot day&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Drink plenty of water&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> is_cold:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;It&#x27;s a cold day&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Wear warm clothes&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;It&#x27;s a lovely day&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;enjoy your day&quot;</span>)</span><br><span class="line"></span><br><span class="line">It<span class="string">&#x27;s a hot day</span></span><br><span class="line"><span class="string">Drink plenty of water</span></span><br><span class="line"><span class="string">enjoy your day</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">price = <span class="number">1000000</span></span><br><span class="line">has_good_credit = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> has_good_credit:</span><br><span class="line">    down_payment = <span class="number">0.1</span>*price</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    down_payment = <span class="number">0.2</span>*price</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Down payment: <span class="subst">&#123;down_payment&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">Down payment: <span class="number">100000.0</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">has_good_income = <span class="literal">True</span></span><br><span class="line">has_good_credit = <span class="literal">True</span></span><br><span class="line"><span class="keyword">if</span> has_good_income <span class="keyword">and</span> has_good_credit:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Eligible for loan&quot;</span>)</span><br><span class="line">    </span><br><span class="line">Eligible <span class="keyword">for</span> loan</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">has_good_income = <span class="literal">False</span></span><br><span class="line">has_good_credit = <span class="literal">True</span></span><br><span class="line"><span class="keyword">if</span> has_good_income <span class="keyword">or</span> has_good_credit:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Eligible for loan&quot;</span>)</span><br><span class="line">    </span><br><span class="line">Eligible <span class="keyword">for</span> loan</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">has_good_credit = <span class="literal">True</span></span><br><span class="line">has_criminal_record = <span class="literal">False</span></span><br><span class="line"><span class="keyword">if</span> has_good_credit <span class="keyword">and</span> <span class="keyword">not</span> has_criminal_record:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Eligible for loan&quot;</span>)</span><br><span class="line">    </span><br><span class="line">Eligible <span class="keyword">for</span> loan</span><br></pre></td></tr></table></figure>
+
+<h2 id="一个小练习：体重单位转换"><a href="#一个小练习：体重单位转换" class="headerlink" title="一个小练习：体重单位转换"></a>一个小练习：体重单位转换</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">weight = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;Weight: &quot;</span>))</span><br><span class="line">unit = <span class="built_in">input</span>(<span class="string">&quot;(L)bs or (K)g: &quot;</span>)</span><br><span class="line"><span class="keyword">if</span> unit.upper() == <span class="string">&quot;L&quot;</span>:</span><br><span class="line">    converted = weight*<span class="number">0.45</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;You are <span class="subst">&#123;converted&#125;</span> kilos&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    converted = weight/<span class="number">0.45</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;you are <span class="subst">&#123;converted&#125;</span> pounds&quot;</span>)</span><br><span class="line">    </span><br><span class="line">Weight: <span class="number">72</span></span><br><span class="line">(L)bs <span class="keyword">or</span> (K)g: k</span><br><span class="line">you are <span class="number">160.0</span> pounds</span><br></pre></td></tr></table></figure>
+
+<h2 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a>while语句</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> i&lt;<span class="number">5</span>:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Done&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line">Done</span><br></pre></td></tr></table></figure>
+
+<h2 id="一个小练习：猜数字游戏"><a href="#一个小练习：猜数字游戏" class="headerlink" title="一个小练习：猜数字游戏"></a>一个小练习：猜数字游戏</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">secret_number = <span class="number">9</span></span><br><span class="line"></span><br><span class="line">guess_count = <span class="number">0</span></span><br><span class="line">guess_limit = <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> guess_count&lt;guess_limit:</span><br><span class="line">    guess = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;Guess: &quot;</span>))</span><br><span class="line">    guess_count+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> guess == secret_number:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;you won&quot;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;you are failed&quot;</span>)</span><br><span class="line">    </span><br><span class="line">Guess: <span class="number">1</span></span><br><span class="line">Guess: <span class="number">2</span></span><br><span class="line">Guess: <span class="number">3</span></span><br><span class="line">you are failed</span><br></pre></td></tr></table></figure>
+
+<h2 id="一个汽车启停游戏"><a href="#一个汽车启停游戏" class="headerlink" title="一个汽车启停游戏"></a>一个汽车启停游戏</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">command = <span class="string">&quot;&quot;</span></span><br><span class="line">started = <span class="literal">False</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    command = <span class="built_in">input</span>(<span class="string">&quot;&gt; &quot;</span>).lower()</span><br><span class="line">    <span class="keyword">if</span> command == <span class="string">&quot;start&quot;</span>:</span><br><span class="line">        <span class="keyword">if</span> started:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;car is already started&quot;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            started = <span class="literal">True</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;Car started...&quot;</span>)</span><br><span class="line">    <span class="keyword">elif</span> command == <span class="string">&quot;stop&quot;</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> started:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;car is already stopped&quot;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            started = <span class="literal">False</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;Car stopped.&quot;</span>)</span><br><span class="line">    <span class="keyword">elif</span> command == <span class="string">&quot;help&quot;</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">start - to start the car</span></span><br><span class="line"><span class="string">stop - to stop the car</span></span><br><span class="line"><span class="string">quit - to quit</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span>)</span><br><span class="line">    <span class="keyword">elif</span> command == <span class="string">&quot;quit&quot;</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Sorry,I don&#x27;t understand that!&quot;</span>)</span><br><span class="line">        </span><br><span class="line">&gt; <span class="built_in">help</span></span><br><span class="line">start - to start the car</span><br><span class="line">stop - to stop the car</span><br><span class="line">quit - to quit  </span><br><span class="line">&gt; start</span><br><span class="line">Car started...</span><br><span class="line">&gt; start</span><br><span class="line">car <span class="keyword">is</span> already started</span><br><span class="line">&gt; stop</span><br><span class="line">Car stopped.</span><br><span class="line">&gt; stop</span><br><span class="line">car <span class="keyword">is</span> already stopped</span><br><span class="line">&gt; quit</span><br><span class="line">运行结束。</span><br></pre></td></tr></table></figure>
+
+<h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">prices = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>]</span><br><span class="line">total = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> price <span class="keyword">in</span> prices:</span><br><span class="line">    total += price</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;total:<span class="subst">&#123;total&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">total:<span class="number">60</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;(<span class="subst">&#123;x&#125;</span>,<span class="subst">&#123;y&#125;</span>)&quot;</span>)</span><br><span class="line">        </span><br><span class="line">(<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line">(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">(<span class="number">0</span>,<span class="number">2</span>)</span><br><span class="line">(<span class="number">1</span>,<span class="number">0</span>)</span><br><span class="line">(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">(<span class="number">2</span>,<span class="number">0</span>)</span><br><span class="line">(<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">(<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line">(<span class="number">3</span>,<span class="number">0</span>)</span><br><span class="line">(<span class="number">3</span>,<span class="number">1</span>)</span><br><span class="line">(<span class="number">3</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="打印出一个F"><a href="#打印出一个F" class="headerlink" title="打印出一个F"></a>打印出一个F</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">5</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">2</span>]</span><br><span class="line"><span class="keyword">for</span> x_count <span class="keyword">in</span> numbers:</span><br><span class="line">    output = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> count <span class="keyword">in</span> <span class="built_in">range</span>(x_count):</span><br><span class="line">        output += <span class="string">&quot;X&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(output)</span><br><span class="line">    </span><br><span class="line">XXXXX</span><br><span class="line">XX</span><br><span class="line">XXXXX</span><br><span class="line">XX</span><br><span class="line">XX</span><br></pre></td></tr></table></figure>
+
+<h2 id="找到列表中的最大值"><a href="#找到列表中的最大值" class="headerlink" title="找到列表中的最大值"></a>找到列表中的最大值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">89</span>, <span class="number">55</span>, <span class="number">56</span>, <span class="number">135</span>, <span class="number">555</span>]</span><br><span class="line"><span class="built_in">max</span> = numbers[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">for</span> number <span class="keyword">in</span> numbers:</span><br><span class="line">    <span class="keyword">if</span> number &gt; <span class="built_in">max</span>:</span><br><span class="line">        <span class="built_in">max</span> = number</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">max</span>)</span><br><span class="line"></span><br><span class="line"><span class="number">555</span></span><br></pre></td></tr></table></figure>
+
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/givemeapanda">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python%E7%BB%83%E4%B9%A0-01"><span class="toc-number">1.</span> <span class="toc-text">Python练习-01</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#formatted-string-%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.1.</span> <span class="toc-text">formatted string 格式化字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text">字符串函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text">数学运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.4.</span> <span class="toc-text">运算优先级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#if%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.5.</span> <span class="toc-text">if语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97"><span class="toc-number">1.6.</span> <span class="toc-text">逻辑运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%B0%8F%E7%BB%83%E4%B9%A0%EF%BC%9A%E4%BD%93%E9%87%8D%E5%8D%95%E4%BD%8D%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.7.</span> <span class="toc-text">一个小练习：体重单位转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#while%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.8.</span> <span class="toc-text">while语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%B0%8F%E7%BB%83%E4%B9%A0%EF%BC%9A%E7%8C%9C%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F"><span class="toc-number">1.9.</span> <span class="toc-text">一个小练习：猜数字游戏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E6%B1%BD%E8%BD%A6%E5%90%AF%E5%81%9C%E6%B8%B8%E6%88%8F"><span class="toc-number">1.10.</span> <span class="toc-text">一个汽车启停游戏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.11.</span> <span class="toc-text">for循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%8D%B0%E5%87%BA%E4%B8%80%E4%B8%AAF"><span class="toc-number">1.12.</span> <span class="toc-text">打印出一个F</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%BE%E5%88%B0%E5%88%97%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC"><span class="toc-number">1.13.</span> <span class="toc-text">找到列表中的最大值</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&text="><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&title="><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&is_video=false&description="><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=&body=Check out this article: http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&title="><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&title="><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&title="><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&title="><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&name=&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2022/10/03/Python%E7%BB%83%E4%B9%A0-01/&t="><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2022
+    高旭
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/givemeapanda">项目</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
